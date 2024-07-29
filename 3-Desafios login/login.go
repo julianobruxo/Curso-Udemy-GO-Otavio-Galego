@@ -20,28 +20,40 @@ func password() {
 		}
 	}
 }
-func login() {
+func login() string {
 	fmt.Println("Welcome")
 	var name string
 	time.Sleep(time.Second * 1)
 	fmt.Println("Type your name")
 	for {
 		fmt.Scan(&name)
-		if name == "Juliano" {
-			fmt.Println("Welcome master. ")
-			break
-		} else if name == "Suzy" {
-			fmt.Println("Welcome master's master. ")
-			break
-		} else if name == "Isa" {
-			fmt.Println("Welcome young master. ")
-			break
-		} else {
-			fmt.Println("Invalid name.\nTry again")
-			continue
+		switch name {
+		case "Juliano":
+			{
+				fmt.Println("Welcome master. ")
+				return name
+			}
+		case "Suzy":
+			{
+				fmt.Println("Welcome master's master. ")
+				return name
+			}
+		case "Isa":
+			{
+				fmt.Println("Welcome young master. ")
+				return name
+			}
+
+		default:
+			{
+				fmt.Println("Invalid name.\nTry again")
+			}
+
 		}
+		continue
 	}
 }
+
 func main() {
 	login()
 	password()
